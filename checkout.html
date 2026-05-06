@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout – Royal Nawab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .checkout-wrap { max-width: 720px; margin: 0 auto; padding: 50px 20px 70px; }
+    .checkout-notice { border: 1px solid #ddd; background: #fff; padding: 28px; text-align: center; }
+    .checkout-notice h2 { margin-bottom: 10px; }
+    .checkout-notice p { color: #666; font-size: 0.9rem; line-height: 1.7; margin-bottom: 18px; }
+    .checkout-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Royal Nawab</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="booking.php">Booking</a></li>
+      <li><a href="delivery.html">Delivery &amp; Collection</a></li>
+      <li><a href="deals.php">Deals</a></li>
+      <li><a href="menu.php" class="btn-menu">Menu</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div><h1>Checkout</h1><p>Start from a delivery or collection cart.</p></div>
+  </section>
+
+  <div class="checkout-wrap">
+    <div class="checkout-notice">
+      <h2>Checkout Starts From Your Cart</h2>
+      <p>The live payment flow is handled by <strong>checkout.php</strong> after you add items to a delivery or collection cart. Choose an order type below to start.</p>
+      <div class="checkout-actions">
+        <a href="order-delivery.php" class="btn">Order Delivery</a>
+        <a href="order-collection.php" class="btn btn-light">Order Collection</a>
+      </div>
+    </div>
+  </div><!-- end checkout-wrap -->
+
+  <footer class="footer">
+    <div class="grid-4">
+      <div><h4>Opening Hours</h4><p>Mon–Sat: 10AM–12AM</p><p>Sunday: 2PM–10PM</p></div>
+      <div><h4>Contact Us</h4><p>info@royalnawab.com</p><p>📞 +44 1234 567890</p></div>
+      <div><h4>Useful Links</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="menu.php">Menu</a></li></ul></div>
+      <div><h4>Social Links</h4><div class="social-icons"><a href="#" class="social">f</a><a href="#" class="social">t</a><a href="#" class="social">in</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Royal Nawab. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

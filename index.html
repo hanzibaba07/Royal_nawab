@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royal Nawab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Royal Nawab</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="booking.php">Booking</a></li>
+      <li><a href="delivery.html">Delivery &amp; Collection</a></li>
+      <li><a href="deals.php">Deals</a></li>
+      <li><a href="menu.php" class="btn-menu">Menu</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>Welcome to Royal Nawab</h1>
+      <p>Authentic Indian and Pakistani cuisine, freshly prepared for dine-in, delivery, and collection.</p>
+      <div class="hero-buttons">
+        <a href="menu.php" class="btn">View Menu</a>
+        <a href="delivery.html" class="btn btn-outline">Order Online</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="center">What Would You Like To Do?</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div class="category-photo">
+          <img src="asset/bookatable.jpeg" alt="Book a table" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <h3>Book a Table</h3>
+        <p>Reserve a table for lunch, dinner, or a special occasion.</p>
+        <a href="booking.php" class="btn">Book Now</a>
+      </div>
+      <div class="card">
+        <div class="category-photo">
+          <img src="asset/delivery.jpeg" alt="Order food for delivery or collection" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <h3>Order Food</h3>
+        <p>Choose delivery to your door or collection from the restaurant.</p>
+        <a href="delivery.html" class="btn">Delivery &amp; Collection</a>
+      </div>
+      <div class="card">
+        <div class="category-photo">
+          <img src="asset/browsedeals.jpeg" alt="Browse deals and offers" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <h3>Browse Deals</h3>
+        <p>Explore family meals, lunch specials, platters, and party packs.</p>
+        <a href="deals.php" class="btn">View Deals</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light popular-choices">
+    <h2 class="center">Popular Choices</h2>
+    <div class="grid-4">
+      <div class="card popular-choice-card"><h3>Curries</h3><p>Rich, aromatic curries cooked with classic spices.</p></div>
+      <div class="card popular-choice-card"><h3>BBQ</h3><p>Tandoor-grilled meats, kebabs, chops, and platters.</p></div>
+      <div class="card popular-choice-card"><h3>Biryani</h3><p>Layered rice dishes packed with flavour and fragrance.</p></div>
+      <div class="card popular-choice-card"><h3>Desserts</h3><p>Traditional sweet dishes to finish your meal.</p></div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <form class="newsletter-bar" id="newsletterForm">
+      <input type="email" name="email" placeholder="Enter your email for offers" required />
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p id="newsletterMsg" class="center newsletter-msg"></p>
+  </section>
+
+  <footer class="footer">
+    <div class="grid-4">
+      <div><h4>Opening Hours</h4><p>Mon-Sat: 10AM-12AM</p><p>Sunday: 2PM-10PM</p></div>
+      <div><h4>Contact Us</h4><p>info@royalnawab.com</p><p>Phone: +44 1234 567890</p></div>
+      <div><h4>Useful Links</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="menu.php">Menu</a></li></ul></div>
+      <div><h4>Admin</h4><p><a href="admin.php">Admin Login</a></p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Royal Nawab. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var formData = new FormData(this);
+      fetch('subscribe.php', { method: 'POST', body: formData })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          document.getElementById('newsletterMsg').textContent = data.message || 'Thank you for subscribing!';
+        })
+        .catch(function() {
+          document.getElementById('newsletterMsg').textContent = 'Subscription could not be saved right now.';
+        });
+    });
+  </script>
+</body>
+</html>

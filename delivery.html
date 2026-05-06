@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delivery &amp; Collection - Royal Nawab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">Royal Nawab</a></div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="booking.php">Booking</a></li>
+      <li><a href="delivery.html" class="active-page">Delivery &amp; Collection</a></li>
+      <li><a href="deals.php">Deals</a></li>
+      <li><a href="menu.php" class="btn-menu">Menu</a></li>
+    </ul>
+  </nav>
+
+  <section class="page-hero">
+    <div><h1>Delivery &amp; Collection</h1><p>Choose how you want to receive your order.</p></div>
+  </section>
+
+  <section class="section delivery-page">
+    <div class="delivery-options-grid">
+      <div class="card">
+        <div class="deal-photo"><img src="asset/delivery.jpeg" alt="Delivery" loading="lazy" width="480" height="300" /></div>
+        <h3>Delivery</h3>
+        <p>Order online, pay by card, and the restaurant will confirm your estimated delivery time.</p>
+        <p class="price">&pound;2.99 delivery fee</p>
+        <a href="order-delivery.php" class="btn">Order Delivery</a>
+      </div>
+      <div class="card">
+        <div class="deal-photo"><img src="asset/collection.jpeg" alt="Collection" loading="lazy" width="480" height="300" /></div>
+        <h3>Collection</h3>
+        <p>Order ahead, pay by card, and collect your food from the restaurant.</p>
+        <p class="price">Free collection</p>
+        <a href="order-collection.php" class="btn">Order Collection</a>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <h4>Ordering Information</h4>
+      <p>We deliver Mon-Sat: 10:00 AM - 12:00 AM and Sunday: 2:00 PM - 10:00 PM. Delivery drivers are assigned automatically when the order is paid.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="grid-4">
+      <div><h4>Opening Hours</h4><p>Mon-Sat: 10AM-12AM</p><p>Sunday: 2PM-10PM</p></div>
+      <div><h4>Contact Us</h4><p>info@royalnawab.com</p><p>Phone: +44 1234 567890</p></div>
+      <div><h4>Useful Links</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="menu.php">Menu</a></li></ul></div>
+      <div><h4>Social Links</h4><div class="social-icons"><a href="#" class="social">f</a><a href="#" class="social">t</a><a href="#" class="social">in</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Royal Nawab. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
